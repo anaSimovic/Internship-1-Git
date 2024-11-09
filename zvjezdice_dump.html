@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dijamant</title>
+</head>
+<body>
+<script>
+function iscrtavanjeRomba() {
+    let n = parseInt(prompt("Unesite neparni broj za visinu romba:"));
+
+    if (n % 2 === 0 || isNaN(n)) {
+        console.log("Molimo unesite neparni broj.");
+        return;
+    }
+
+    const srednjiRed = Math.floor(n / 2); 
+    for (let i = 0; i <= srednjiRed; i++) {
+        let zvjezdice = '*'.repeat(2 * i + 1); 
+        let prazno = ' '.repeat(srednjiRed - i); 
+        console.log(prazno + zvjezdice); 
+    }
+
+    for (let i = srednjiRed - 1; i >= 0; i--) {
+        let zvjezdice = '*'.repeat(2 * i + 1); 
+        let prazno = ' '.repeat(srednjiRed - i); 
+        console.log(prazno + zvjezdice); 
+    }
+}
+iscrtavanjeRomba();
+
+</script>
+
+</body>
+</html>
