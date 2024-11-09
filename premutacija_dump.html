@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function permute(arr, start, end) {
+            if (start === end) {
+                console.log(arr.join(" "));
+            } else {
+                for (let i = start; i <= end; i++) {
+
+                    [arr[start], arr[i]] = [arr[i], arr[start]];
+
+                    permute(arr, start + 1, end);
+
+                    [arr[start], arr[i]] = [arr[i], arr[start]];
+                }
+            }
+        }
+
+
+        function generatePermutations() {
+            const input = prompt("Unesite niz cijelih brojeva, odvojenih razmacima:");
+            const numbers = input.split(" ").map(Number);
+
+            console.log("Permutacije niza su:");
+            permute(numbers, 0, numbers.length - 1);
+        }
+
+
+        generatePermutations();
+
+    </script>
+</body>
+
+</html>
